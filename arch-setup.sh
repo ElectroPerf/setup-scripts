@@ -74,18 +74,17 @@ install_yay
 # List of required packages (sorted alphabetically)
 required_packages=(
     "adb" "android-tools" "android-udev" "arj" "aria2" "axel"
-    "base-devel" "battop" "bc" "bison" "brotli" "cabextract" "ccache"
+    "base-devel" "bc" "bison" "brotli" "cabextract" "ccache"
     "clang" "cmake" "cpio" "curl" "dbus" "detox" "dtc" "dpkg"
-    "file-roller" "flex" "flatpak" "freedownloadmanager"
+    "file-roller" "flex" "motrix" "xml2" "z3" "zsh"
     "gcc" "gcc-libs" "gawk" "git" "github-cli" "go" "glibc"
-    "htop" "inetutils" "jdk21-openjdk" "jq" "less" "libelf"
+    "htop" "inetutils" "battop-bin" "jdk22-openjdk" "jq" "less" "libelf"
     "libxcrypt-compat" "lineageos-devel" "lzip" "lz4" "make" "man-pages"
     "mlocate" "multilib-devel" "neofetch" "neovim" "ninja" "noto-fonts-cjk"
     "noto-fonts-extra" "ncurses" "openssh" "openssl" "p7zip" "python-pip"
     "python-setuptools" "python3" "repo" "rclone" "rsync" "screen" "sharutils"
-    "slack-desktop" "speedtest-cli" "systemd" "telegram-desktop" "tmate" "tmux"
+    "slack-desktop" "systemd" "telegram-desktop" "tmate" "tmux"
     "unace" "unrar" "uudeview" "util-linux" "visual-studio-code-bin" "wget"
-    "xml2" "z3" "zsh"
 )
 
 # Check which required packages are not installed
@@ -134,10 +133,10 @@ print_color "Installing Oh My Zsh..." "blue"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Check and clone zsh-autosuggestions if not exists
-clone_if_not_exist "$HOME/.oh-my-zsh/custom/zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosuggestions.git"
+clone_if_not_exist "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosuggestions.git"
 
 # Check and clone zsh-syntax-highlighting if not exists
-clone_if_not_exist "$HOME/.oh-my-zsh/custom/zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+clone_if_not_exist "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 
 # Install Starship prompt
 print_color "Installing Starship prompt..." "blue"
